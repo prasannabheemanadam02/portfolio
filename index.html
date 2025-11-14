@@ -1,0 +1,838 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasanna Bheemanadam_ Portfolio</title>
+    <link rel="icon"type="imag/Png" href="11zon_cropped (1).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+       :root {
+    --primary: #ff6b6b;         
+    --primary-dark: #c0392b;    
+    --secondary: #4ecdc4;       
+    --dark: #2c3e50;            
+    --light: #fefefe;           
+    --gray: #95a5a6;            
+    --light-gray: #ecf0f1;      
+}
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background:var(--dark);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color:#4ecdc4;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: #4ecdc4;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item i {
+            color: var(--primary);
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-gray);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--light);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 25px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: var(--light-gray);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .portfolio-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .portfolio-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 140px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .portfolio-filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Prasanna<span>Bheemanadam</span></a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Bheemanadam Prasanna</span><br>Full Stack Java Developer</h1>
+                <p>Full-Stack Java Developer | Building robust, scalable applications from database to user interface</p>
+                <div class="buttons">
+                    <a href="prassuresume.pdf" class="btn btn-primary"target="_blank">View Resume</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Electronics & Communication Engineer</h3>
+                    <p>Hello! I'm Prasanna, an Electronics & Communication Engineer with a strong foundation in system design, signal processing, and integrated circuit principles. My background has instilled in me a disciplined, logical approach to problem-solving and optimization.</p>
+
+<p>I leverage this engineering mindset—focusing on efficiency, architecture, and robust performance—to excel in software development. My expertise includes proficiency in Core Java, C, and Python for application logic, and managing data integrity with Oracle Database. I am committed to building technically sound and reliable solutions.</p>
+                    
+                    <h4 style="margin: 25px 0 15px;">My Skills</h4>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C Programming</span>
+                       
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-coffee"></i>
+                            <span>Core Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>Oracle Database</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>VLSI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML & CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                <img src="prassu image.jpg" alt="Prasanna" class="profile-img">  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <h2 class="section-title">My Portfolio</h2>
+
+        <div class="portfolio-filters">
+            
+            <button class="filter-btn" data-filter="academic">Academic Projects</button>
+            <button class="filter-btn" data-filter="certificate">Certificates</button>
+            <button class="filter-btn" data-filter="technical">Technical Projects</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+            <!-- Academic Projects -->
+            <div class="portfolio-item" data-category="academic">
+                <img src="miniproject img1.jpg" alt="Samrt floor Cleaning Robot Based on Iot" class="portfolio-img">
+                <div class="portfolio-info">
+                        <h3>Smart Floor Cleaning Robot Based on IoT</h3>
+<p>A smart and efficient floor-cleaning robot powered by IoT technology, designed to automate cleaning tasks, monitor cleanliness levels, and provide real-time updates through connected sensors and mobile integration.</p>
+                        <div class="portfolio-tags">
+                        <span class="tag">Raspberry pi</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prasannabheemanadam02/MiniProject"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="academic">
+                <img src="major img.jpg" alt="smart industrial hazardous gas leakage detection and automated safety response system" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Smart Industrial Hazardous Gas Leakage Detection and Automated Safety Response System</h3>
+<p>An intelligent IoT-based system designed to detect hazardous gas leaks in industrial environments and trigger automated safety protocols, including real-time alerts, ventilation control, and emergency shutdowns to prevent accidents and ensure worker safety.</p>
+<div class="portfolio-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Ultrasonic</span>
+                        <span class="tag">Tilt sensor</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prasannabheemanadam02/Majorproject"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <div class="portfolio-item" data-category="certificate">
+                <img src="https://placehold.co/600x400/6366f1/ffffff?text=Very Large Scale Integration" alt="VLSI Internship Certificate" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>VLSI </h3>
+                    <p>Successfully completed internship in VLSI Design and Verification, gaining hands-on experience in digital design and simulation tools.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">VLSI</span>
+                        <span class="tag">Verilog</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href=certificate.jpg><i class="fas fa-certificate"></i> View Certificate</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Technical Projects -->
+            <div class="portfolio-item" data-category="technical">
+                <img src="https://placehold.co/600x400/3b82f6/ffffff?text=ATM Machine Simulation" alt="ATM Machine Simulation" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>ATM Machine Simulation</h3>
+<p>A Java-based desktop application that simulates the core functionalities of an ATM, including user authentication, balance inquiry, cash withdrawal, deposit, and transaction history, providing a realistic banking experience for educational and testing purposes.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Swing</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prasannabheemanadam02/CUI"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="technical">
+                <img src="https://placehold.co/600x400/f97316/ffffff?text=Restaurant Management System" alt="Restaurant Management System" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Restaurant Management System</h3>
+<p>Developed a comprehensive restaurant management system using a graphical user interface (GUI) that facilitates order placement, menu management, table tracking, and real-time billing. The system enhances operational efficiency and improves customer service through intuitive navigation and responsive design.</p>
+                    <div class="portfolio-tags">
+                        
+                    </div>
+                    <div class="portfolio-links">
+                   <a href="https://github.com/prasannabheemanadam02/CUI"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-subtitle">Ready to contribute and grow through meaningful teamwork</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>prasannabheemandam123@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>9390648228</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Jangaon,Telangana,India.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/prasannabheemanadam02" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/prasanna-bheemanadam-a61347383" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        <a href="https://www.instagram.com/_prasanna_027" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Bheemanadam<span>Prasanna</span></div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Bheemanadam prasanna. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Portfolio Filtering Functionality
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+
+            if (filterValue === 'all' || itemCategory === filterValue) {
+                item.style.display = 'block';
+                item.classList.add('fade-in');
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'white';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+    
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
